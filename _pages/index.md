@@ -8,7 +8,6 @@ layout: default
 - 🔭 I’m interested in **Cybersecurity** and **CTF**
 - 🌱 I'm a 4th-year Cybersecurity Student at INSA CVL
 - 📫 Contact me at **vinh_thanh.nguyen@insa-cvl.fr**
-- ⚡ Fun fact: **I keep my own bucket list on this site!**
 </br>**Hope you can find something useful here!!**
 
 🚧🚧🚧 Attention: This page is under construction

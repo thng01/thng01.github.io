@@ -1,3 +1,3 @@
 ---
-layout: cp_toplevel
+layout: notes
 ---

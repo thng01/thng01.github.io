@@ -8,8 +8,8 @@ google_site_verification_content: # The 'content' tag for site verification
 google_analytics: # Your Google Analytics Tracking ID
 
 # Usernames and badges
-htb_badge_no: # Go to the HackTheBox site and copy your ID
-thm_badge_no: # Go to https://tryhackme.com/profile -> Public Profile -> Get Badge ID
+htb_badge_no: # 700619
+thm_badge_no: # 962816
 show_thm_htb_badges_in_nav: false
 github_username: thng01
 gitlab:
@@ -46,6 +46,8 @@ collections:
       output: true
       permalink: /:name
    writeups:
+      output: true
+   notes:
       output: true
    solutions:
       output: true
