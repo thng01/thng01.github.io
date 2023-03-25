@@ -9,7 +9,6 @@ date: 2023-03-22
 comments: false
 ---
 
-# A Starry Night Sky
 [Link to challenges](https://github.com/ChallengeHackDay/2023-qualif/tree/main/OSINT/A%20starry%20night%20sky)
 
 ## ## Challenge Description
@@ -37,12 +36,3 @@ So the flag is  **`HACKDAY{CHILE_MAY}`**. What a nice photo!
 Since I prefer the easy way, I found the other solutions are very interesting and worth learning too.
 
 Here is the [write-up by the developper of the event](https://github.com/ChallengeHackDay/2023-qualif/blob/main/OSINT/A%20starry%20night%20sky/writeup/isnubi-WU.en.md). They look for the largest observation center in the world: the Paranal Observatory and see how did the sky look at 22:00 in different time of the year 2022 and the stars/constellations. I barely have any knowledge on this field so I find this approach very interesting!
-
-
-
-
-
-
-
-
-
