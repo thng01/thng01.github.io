@@ -23,11 +23,9 @@ We start with the metadata of the pdf file.
 
 <pre 
   class="command-line" 
-  data-prompt="kali@kali $" 
+  data-prompt="thng01@parrot $" 
   data-output="4"
-><code class="language-bash">
-exiftool Astronauts_Poem.pdf
-</code>
+><code class="language-bash">exiftool Astronauts_Poem.pdf</code>
 </pre> 
 
 We will notice this line: **Language                        : https://esolangs.org/wiki/Poetic**
