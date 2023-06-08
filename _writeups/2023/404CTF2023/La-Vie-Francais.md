@@ -4,7 +4,7 @@ category: 404CTF2023
 chall_description: https://ctf.404ctf.fr/challenges#La%20Vie%20Fran%C3%A7aise-113
 points: 956
 solves: 81
-tags: Web
+tags: Web, SQLi
 date: 2023-06-06
 comments: false
 ---
