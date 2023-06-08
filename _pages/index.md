@@ -10,5 +10,5 @@ layout: default
 - 📫 Contact me at **vinh_thanh.nguyen@insa-cvl.fr**
 - **Hope you can find something useful here!!**
 
-🚧🚧🚧 Attention: This page is under construction
+<span hidden>🚧🚧🚧 Attention: This page is under construction</span>
 
