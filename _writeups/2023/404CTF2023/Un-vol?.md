@@ -13,6 +13,8 @@ comments: false
 
 ## ## Challenge Description
 
+![Photo](../../../assets/CTFs/404CTF2023/annonce_unvol.png "Annonce")
+
 This OSINT challenge requires us to find out where Arsène Lupin hides his loot, given 6 photos of him in Paris. We shall examine those photos one by one. The flag format is **`404CTF{hiding_place}`**
 
 ## ## Solution
@@ -25,7 +27,7 @@ The location of this photo can be found easily on Google Maps with the name of t
 
 ![Photo](../../../assets/CTFs/404CTF2023/Arsene_02.png)
 
-For the second one, it was a bit different since the Street view of Maps is outdated and doesn't have the construction, but with the street name + 2 building, 1 in bricks 1 in white is enough for us to find.
+For the second one, it was a bit different since the Street view of Maps is outdated and doesn't have the construction, but with the street name + 2 building, 1 of bricks 1 in white is enough for us to find.
 
 I keep on finding the location of the rest and pin them on the map. Since they are all clear with names and signs, we should have no problem finding their location at all.
 
@@ -41,6 +43,6 @@ And finally, we need to figure out the relation among those pins. Here is what I
 
 ![Photo](../../../assets/CTFs/404CTF2023/mapsreal.png)
 
-After having linked all the pins with black line, I realized that perhap Lupin is trying to create an emerald shape (I tried to fill in the rest with red lines). So I looked for the missing pins but it was pointless. Then I decided to go for the center and voilà, it leads us to "La tombe de Frédéric Chopin" 
+After having linked all the pins with black line, I realized that perhap Lupin is trying to create an emerald shape (I tried to fill in the rest with red lines), so I looked for the missing pins but it was pointless. Then I decided to go for the center and voilà, it leads us to "La tombe de Frédéric Chopin"  (Green elipse above).
 
 So, the flag is **`404CTF{la_tombe_de_frederic_chopin}`**

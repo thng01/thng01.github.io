@@ -11,11 +11,15 @@ comments: false
 
 ## ## Challenge Description
 
+![Photo](../../../assets/CTFs/404CTF2023/annonce_laviefrancais.png "Annonce")
+
 We have access to a website La Vie Francais (which was hinted that there exists a SQL server, since the admin banned sqlmap)
 
 ![Photo](../../../assets/CTFs/404CTF2023/laviefrancais1.png "Home page")
 
 From the description and context of the challenge, it seems like we need to login as Madame Forestier to get the flag.
+
+
 
 ## ## Solution
 
