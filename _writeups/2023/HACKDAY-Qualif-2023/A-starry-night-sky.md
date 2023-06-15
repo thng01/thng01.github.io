@@ -13,7 +13,7 @@ comments: false
 
 ## ## Challenge Description
 
-![Photo](../../../assets/CTFs/HACKDAY-Qualif-2023/A starry night sky.jpg "A starry night sky")
+![Photo](../../../assets/CTFs/HACKDAY Qualif 2023/A starry night sky.jpg "A starry night sky")
 
 This is an OSINT Challenge, in which we are given this photo. We are asked to find the place and the month of shooting under the format **`HACKDAY{COUNTRY_MONTH}`**
 

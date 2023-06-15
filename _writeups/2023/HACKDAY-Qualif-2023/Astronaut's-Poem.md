@@ -13,7 +13,7 @@ comments: false
 
 ## ## Challenge Description
 
-![Photo](../../../assets/CTFs/HACKDAY-Qualif-2023/astronatpoem.png "Astronat'sPoem")
+![Photo](../../../assets/CTFs/HACKDAY Qualif 2023/astronatpoem.png "Astronat'sPoem")
 
 This is an Stegnography Challenge, in which we are given a pdf containing 1 page of poem only. We are asked to find the constellation in French and in lower case of the constellation containing the found NGC.
 
