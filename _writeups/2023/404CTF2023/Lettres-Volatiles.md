@@ -27,12 +27,16 @@ In the location `Documents/JumpBag/` we can see a **raw** file, and once again, 
 vol2 -f C311M1M1-PC-20230514-200525.raw imageinfo
 ```
 
-I saw the profile is Win7SP1x64, and tried to enumerate around with processes, different offset... But there's not really anything.
+I saw the profile is Win7SP1x64, and tried to enumerate around with processes, different offset... But there's not really anything useful.
 
 But when it comes to `clipboard`, which allows us to dump the clipboard and I found the password for the zip!
 
-![Clipboard dump](../../../assets/CTFs/404CTF2023/clipboard)
+![Clipboard dump](../../../assets/CTFs/404CTF2023/volatiles_clipboard.png)
 
-Extract the zip and I got the file [lettreAOronte.pdf]()
+Extract the zip and I got the file [lettreAOronte.pdf](../../../assets/CTFs/404CTF2023/lettreAOronte.pdf)
+
+At the end of the file we have the flag:
+
+![flag](../../../assets/CTFs/404CTF2023/volatiles_flag.png)
 
 Flag: `404CTF{V0147i1I7y_W1Ll_N3v3r_Wr8_loV3_l3ttEr5}`
