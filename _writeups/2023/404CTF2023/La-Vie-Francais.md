@@ -1,7 +1,7 @@
 ---
 layout: writeup
 category: 404CTF2023
-chall_description: https://ctf.404ctf.fr/challenges#La%20Vie%20Fran%C3%A7aise-113
+chall_description: ../../../assets/CTFs/404CTF2023/annonce_laviefrancais.png
 points: 956
 solves: 81
 tags: Web SQLi
