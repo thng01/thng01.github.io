@@ -35,3 +35,19 @@ for i in range(188,1050):
 
 
 {"role": "user", "email": "marie.honnette@evilottery.ev", "password": "4c504c9d0dce1700ae57a16147074820c0745b005bddcfb4a876a54c38389046", "2FA": "None", "balance": "307.28", "stocks": [{"code": "HWN", "qty": 13.540588842504697}, {"code": "CYI", "qty": 3.444808330834581}, {"code": "TQK", "qty": 6.046132874644536}, {"code": "OUT", "qty": 16.35328518715449}, {"code": "THD", "qty": 9.108755215289444}, {"code": "OQN", "qty": 10.812927301654812}, {"code": "RLI", "qty": 18.653448986299026}, {"code": "JGD", "qty": 12.589059350125865}, {"code": "EYB", "qty": 5.932961914189468}]}
+
+import pyotp
+import time
+import base58
+from datetime import datetime
+
+
+def generate_totp_code(seed_value, specific_time):
+    totp = pyotp.TOTP(seed_value)
+    specific_timestamp = int(specific_time.timestamp())
+    return totp.at(specific_timestamp)
+
+seed_value = "KFGWCURIIJDT6627K5CHAQ3VJ56UU332PNJHE2JXKFMDG4LBJVRQU"
+specific_time = datetime(2023, 12, 2, 20, 15, 0)  
+totp = generate_totp_code(seed_value,specific_time)
+print(totp)
