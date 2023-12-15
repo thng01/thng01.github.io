@@ -19,7 +19,7 @@ To begin with, we have a cryptocurrency trading website with API, and we have to
 
 1. #### Flag 1: Account balance
 
-   The first flag is quite simple: we have to login with given credentials: `emo@trade.local:demo` at the endpoint /api/login and get the account balance.
+   The first flag is quite simple: we have to login with given credentials: `demo@trade.local:demo` at the endpoint /api/login and get the account balance.
 
    After sending login request:
 
@@ -28,7 +28,7 @@ To begin with, we have a cryptocurrency trading website with API, and we have to
    {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwMTUyMTIwNCwianRpIjoiM2I0MWY0ZWYtMGZjZS00NWQ5LTg2YTMtMTNiNjFjMjQ0ZGUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzAxNTIxMjA0LCJleHAiOjE3MDE1MjIxMDR9.M6Yv8y2wHRGpHt82Kw66Qt51xyY7scrw7blClXBIIic"}
    ```
 
-   We got a access_token, which is a JWT. To get the balance I use this code (It's my teammate [Kaiba404](congkhainguyen.github.io):
+   We got a access_token, which is a JWT. To get the balance I use this code (It's my teammate [Kaiba404](congkhainguyen.github.io)):
 
    ```python
    import requests
@@ -69,7 +69,7 @@ To begin with, we have a cryptocurrency trading website with API, and we have to
 
    ![image-20231215142147429](../../../\assets\CTFs\TRACS2023\hash_admin)
 
-   We also have a page for /api/admin, however it was locked by a http authentication (.htpasswd), but now we can access to it and find out there exist 2 endpoint for `admin` and `admin` only: /api/admin/transactions and /api/admin/users
+   We also have a page for /api/admin, however it was locked by a http authentication (.htpasswd), but now we can access to it due to reusing credentials and find out there exist 2 endpoint for `admin` and `admin` only: /api/admin/transactions and /api/admin/users
 
 3. #### Flag 3: Marie Honnette Last IP address
 
@@ -79,7 +79,8 @@ To begin with, we have a cryptocurrency trading website with API, and we have to
    {
    	"role": "user", 
    	"email": "marie.honnette@evilottery.ev", 
-       "password": 		"4c504c9d0dce1700ae57a16147074820c0745b005bddcfb4a876a54c38389046", 	"2FA": "None", 
+      "password": "4c504c9d0dce1700ae57a16147074820c0745b005bddcfb4a876a54c38389046",
+     	"2FA": "None", 
     	"balance": "307.28", 
    	 "stocks": [{"code": "HWN", "qty": 13.540588842504697}, {"code": "CYI", "qty": 3.444808330834581}, {"code": "TQK", "qty": 6.046132874644536}, {"code": "OUT", "qty": 16.35328518715449}, {"code": "THD", "qty": 9.108755215289444}, {"code": "OQN", "qty": 10.812927301654812}, {"code": "RLI", "qty": 18.653448986299026}, {"code": "JGD", "qty": 12.589059350125865}, {"code": "EYB", "qty": 5.932961914189468}]
    }
