@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<h1>Notes</h1>
+<br>
+
+{{ content }}
+
+{% assign platforms = site.notes | group_by:"category" %}
+{% for platform in platforms %}
+{{ platform.name }}
+{% assign modules = platform.items | group_by_exp:"post", "post.module" %}
+{% for module in modules %}
+<br>
+{% assign moduleCode = module.items[0].code %}
+<ul style="padding-top: 0.3em;">
+<!--  <a href="{{ '/' | absolute_url }}notes/{{ platform.name }}/{{ module.name }}">
+    {{ module.name }}
+  </a>-->
+  {{ module.name }}
+  <ul style="padding-top: 0.1em;">
+    {% for post in module.items %}
+    
+    {% assign postCategory = post.title | downcase %}
+    {% assign pageCategory = module.name | replace: '-', ' ' | downcase %}
+    {% if postCategory != pageCategory %}
+    <li style="line-height: 1; padding-top: 0.4em;"">
+      <a href="{{ post.url | absolute_url }}">{{ post.title }}
+      </a>
+      <br>
+      <span class="tag">
+        <small>
+          &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+        </small>
+      </span>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <br>
+</ul>
+
+{% endfor %}
+{% endfor %}
