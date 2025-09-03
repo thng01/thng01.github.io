@@ -7,7 +7,7 @@ date: 2025-09-02
 tags: windows splunk soc
 ---
 
-# Detecting Windows Attacks with Splunk
+# 
 
 Hi, I'm thng01, a soon graduate student currently building my skills in cybersecurity. 
 
