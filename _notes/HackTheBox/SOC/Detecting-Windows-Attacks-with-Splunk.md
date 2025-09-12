@@ -15,6 +15,10 @@ Hi, I'm thng01, a soon graduate student currently building my skills in cybersec
 
 I created this note to document my journey, revise what I’ve learned, and share detailed write-ups of HTB SOC Job Path. My goal is to strengthen my investigation, detection, and analysis skills while preparing for my career in a Security Operations Center.
 
+You will not find any flag nor answer for questions in this blog, but only my summary as well as thought-process after learning this module. I encourage trying to understand and solve the question on your own, and come back to see if we share the same approach or see a difference aspect of the problem.
+
+Enjoy!
+
 
 
 ### Detecting Common User/Domain Recon
@@ -51,7 +55,9 @@ As any other reconnaissance tool, this one executes several LDAP queries to the 
 
 We can detect recon base on those 2 approaches.
 
-Questions:
+
+
+**Questions:**
 
 ![](../../../assets/Notes/SOC/q1s1.png)
 
@@ -82,4 +88,38 @@ The answer is a process that is very familiar throughout the module.
 
 
 ### Detecting Password Spraying
+
+Password Spraying is an attack where the attacker use a small common set of passwords for multiple accounts. It's like multiple accounts - 1 password compared to bruteforce attack (1 account - multiple passwords).
+
+The pattern of this type of attack is <span style="color:green">Event ID 4625 - Failed Logon </span>. There are also other event log that can help:
+
+* 4768 and ErrorCode 0x6 - Kerberos Invalid Users
+* 4768 and ErrorCode 0x12 - Kerberos Disabled Users
+* 4776 and ErrorCode 0xC000006A - NTLM Invalid Users
+* 4776 and ErrorCode 0xC0000064 - NTLM Wrong Password
+* 4648 - Authenticate Using Explicit Credentials
+* 4771 - Kerberos Pre-Authentication Failed
+
+
+
+**Question:**
+
+![Question](../../../assets/Notes/SOC/q1s2.png)
+
+Here is the given Splunk search:
+
+```
+index=main earliest=1690280680 latest=1690289489 source="WinEventLog:Security" EventCode=4625
+| bin span=15m _time
+| stats values(user) as Users, dc(user) as dc_user by src, Source_Network_Address, dest, EventCode, Failure_Reason
+```
+
+This search is looking for Event ID **4625** (Failed Logon), within a timeframe, with a **timebucket of 15 minutes** and then aggregate the results by 5 factors above.
+
+<span style="color:green">bin span=15m _time</span> will floor the event's `_time` to interval of 15 minutes (ex: 09:07 -> 09:00, 09:25 -> 09:15)
+
+
+To solve this, simply change the search to **All time**, and add filter for the targeted machine.
+
+![Question](../../../assets/Notes/SOC/a1s2.png)
 
