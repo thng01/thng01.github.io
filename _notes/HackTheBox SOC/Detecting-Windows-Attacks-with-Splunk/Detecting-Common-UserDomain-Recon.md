@@ -1,8 +1,8 @@
 ---
 layout: note_post
-category: HackTheBox
-module: SOC
-title: Detecting Windows Attacks with Splunk
+category: HackTheBox SOC
+module: Detecting Windows Attacks with Splunk
+title: Detecting Common User/Domain Recon
 date: 2025-09-02
 tags: windows splunk soc
 ---
