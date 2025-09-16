@@ -25,7 +25,7 @@ The pattern of this type of attack is <span style="color:green">Event ID 4625 - 
 
 **Question:**
 
-![Question](../../../\assets\Notes\SOC\q1s2.png)
+![Question](../../../assets\Notes\SOC\q1s2.png)
 
 Here is the given Splunk search:
 
@@ -42,5 +42,5 @@ This search is looking for Event ID **4625** (Failed Logon), within a timeframe,
 
 To solve this, simply change the search to **All time**, and add filter for the targeted machine.
 
-![Question](E:\thng01.github.io\assets\Notes\SOC\a1s2.png)
+![Answer](../../../assets\Notes\SOC\a1s2.png)
 
