@@ -132,3 +132,7 @@ Now we can recompile using another tool in scummtr: scummrp to reompile into 1 D
 ![](../../../\assets\CTFs\Ph0wnCTF-2026-Intro\islandflag.png)
 
 Now not only we get the flag but we did get it shown in the demo.
+
+[Here](../../../\assets\CTFs\Ph0wnCTF-2026-Intro\secret-of-pico-island.tar.gz) is the repatched version of the demo. 
+
+That's the last challenge at the intro. See you soon! 
