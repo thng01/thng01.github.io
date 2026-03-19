@@ -1,6 +1,6 @@
 ---
 layout: writeup
-category: HACKDAY Qualif 2023
+category: HACKDAY-Qualif-2023
 chall_description: https://github.com/ChallengeHackDay/2023-qualif/tree/main/Steganography/Astronaut's%20Poem
 points: 342
 solves: 
@@ -13,7 +13,7 @@ comments: false
 
 ## ## Challenge Description
 
-![Photo](../../../assets/CTFs/HACKDAY Qualif 2023/astronatpoem.png "Astronat'sPoem")
+![Photo](../../../assets/CTFs/HACKDAY-Qualif-2023/astronatpoem.png "Astronat'sPoem")
 
 This is an Stegnography Challenge, in which we are given a pdf containing 1 page of poem only. We are asked to find the constellation in French and in lower case of the constellation containing the found NGC.
 

@@ -1,6 +1,6 @@
 ---
 layout: writeup
-category: HACKDAY Qualif 2023
+category: HACKDAY-Qualif-2023
 chall_description: https://github.com/ChallengeHackDay/2023-qualif/tree/main/OSINT/A%20starry%20night%20sky
 points: 100
 solves: 
@@ -13,7 +13,7 @@ comments: false
 
 ## ## Challenge Description
 
-![Photo](../../../assets/CTFs/HACKDAY Qualif 2023/A starry night sky.jpg "A starry night sky")
+![Photo](../../../assets/CTFs/HACKDAY-Qualif-2023/A starry night sky.jpg "A starry night sky")
 
 This is an OSINT Challenge, in which we are given this photo. We are asked to find the place and the month of shooting under the format **`HACKDAY{COUNTRY_MONTH}`**
 

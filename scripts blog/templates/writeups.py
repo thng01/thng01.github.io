@@ -8,12 +8,12 @@ date: {2}
 
 ctfWriteupTemplate = '''---
 layout: writeup
-category: {0}
-chall_description: {1}
-points: {2}
-solves: {3}
-tags: {4}
-date: {5}
-comments: {6}
+category: {1}
+chall_description: {2}
+points: {3}
+solves: {4}
+tags: {5}
+date: {6}
+comments: {7}
 ---
 '''
