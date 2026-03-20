@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<h1>CTF Writeups</h1>
+<br>
+
+{{ content }}
+
+{% assign sorted_writeups = site.writeups | sort: "url" %}
+{% assign writeups_by_year = sorted_writeups | group_by_exp: "post", "post.url | split:'/' | slice: 2, 1 | first" | reverse %}
+
+{% for year in writeups_by_year %}
+{{ year.name }}
+<br>
+<ul style="padding-top: 0.3em;">
+  {% assign ctfs = year.items | group_by: "category" %}
+  {% for ctf in ctfs %}
+  {% assign overview = ctf.items | where_exp: "item", "item.url contains '/index.html'" | first %}
+  {% if overview %}
+  <a href="{{ overview.url | absolute_url }}">
+    {{ overview.title }}
+  </a>
+  {% else %}
+  {{ ctf.name }}
+  {% endif %}
+
+  <ul style="padding-top: 0.1em;">
+    {% for post in ctf.items %}
+    {% unless post.url contains '/index.html' %}
+    <li style="line-height: 1; padding-top: 0.4em;">
+      <a href="{{ post.url | absolute_url }}"> {{ post.title }}</a>
+      <br>
+      <small>[{{ post.points }}]</small>
+      <span class="tag">
+        <small>
+          &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
+        </small>
+      </span>
+    </li>
+    {% endunless %}
+    {% endfor %}
+  </ul>
+  <br>
+  {% endfor %}
+</ul>
+{% endfor %}
