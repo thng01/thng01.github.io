@@ -21,7 +21,7 @@ At /home we can send a message/comment to be written right on the page after cli
 
 At /flag we get "Ceci est reserve aux admins", since we don't have the access to it right now. At the end of /home we can notify a bot with admin privilege to visit our page.
 
-A simple <script>alert(1)</script> works, so the exploit flows is to create a js script that forced visistor to fetch /flag and post the content of it as a comment on the page (because the bot has no access to internet).
+A simple ```javascript <script>alert(1)</script>``` works, so the exploit flows is to create a js script that forced visistor to fetch /flag and post the content of it as a comment on the page (because the bot has no access to internet).
 
 ![Photo](../../../assets/CTFs/404CTF-2026/telegraphe1.png "homepage")
 
