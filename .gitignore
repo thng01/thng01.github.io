@@ -16,3 +16,4 @@ Gemfile.lock
 scripts blog/templates/__pycache__/__init__.cpython-39.pyc
 scripts blog/templates/__pycache__/writeups.cpython-39.pyc
 scripts blog/templates/__pycache__/__init__.cpython-39.pyc
+/.vscode

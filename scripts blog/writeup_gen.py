@@ -8,6 +8,7 @@ W_DIR = '../_writeups/{0}'.format(date.today().year)
 
 createdFileNames = []
 ctfName = ''
+ctfSection = ''
 
 def createDirIfNotExists(path):
     print('Creating directory: {0}'.format(path))
@@ -15,11 +16,14 @@ def createDirIfNotExists(path):
         os.makedirs(path)
 
 def getCtfFrontMatter():
-    return ctfCompetitionTemplate.format(
+    frontMatter = ctfCompetitionTemplate.format(
         ctfName, 
         ctfName.replace(" ", "-"),
         date.today()
     )
+    if ctfSection:
+        frontMatter = frontMatter.replace('date: {0}'.format(date.today()), 'section: {0}\ndate: {1}'.format(ctfSection, date.today()))
+    return frontMatter
 
 def writeCtfFrontMatter():
     createDirIfNotExists('{0}/{1}/'.format(W_DIR, ctfName.replace(" ", "-")))
@@ -53,8 +57,9 @@ def openCreatedFiles():
         os.system('code "{0}"'.format(fileName))
 
 def main():
-    global ctfName
+    global ctfName, ctfSection
     ctfName = input('Enter CTF Name: ')
+    ctfSection = input('Enter special bucket (blank for year-based CTFs, e.g. Labs): ')
     writeCtfFrontMatter()
     while True:
         challName = input('Enter chall name: ')
