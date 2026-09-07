@@ -11,4 +11,4 @@ Offsec PG writeups and notes.
 
 ## Ranking
 
-**My Ranking:** 6th / ?
+<!-- **My Ranking:** 6th / ? -->

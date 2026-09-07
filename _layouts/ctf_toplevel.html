@@ -13,11 +13,11 @@ layout: default
 {% assign writeups_by_year = yearly_writeups | group_by_exp: "post", "post.url | split:'/' | slice: 2, 1 | first" | reverse %}
 {% assign special_groups = special_writeups | group_by: "section" %}
 
-{% for year in writeups_by_year %}
-{{ year.name }}
+{% for section in special_groups %}
+{{ section.name }}
 <br>
 <ul style="padding-top: 0.3em;">
-  {% assign ctfs = year.items | group_by: "category" %}
+  {% assign ctfs = section.items | group_by: "category" %}
   {% for ctf in ctfs %}
   {% assign overview = ctf.items | where_exp: "item", "item.url contains '/index.html'" | first %}
   {% if overview %}
@@ -49,11 +49,11 @@ layout: default
 </ul>
 {% endfor %}
 
-{% for section in special_groups %}
-{{ section.name }}
+{% for year in writeups_by_year %}
+{{ year.name }}
 <br>
 <ul style="padding-top: 0.3em;">
-  {% assign ctfs = section.items | group_by: "category" %}
+  {% assign ctfs = year.items | group_by: "category" %}
   {% for ctf in ctfs %}
   {% assign overview = ctf.items | where_exp: "item", "item.url contains '/index.html'" | first %}
   {% if overview %}

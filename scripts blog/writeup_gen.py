@@ -1,6 +1,4 @@
 from datetime import date
-import re
-import requests
 import os, sys
 from templates.writeups import *
 
