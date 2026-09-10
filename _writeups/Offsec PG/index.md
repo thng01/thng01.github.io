@@ -7,8 +7,5 @@ date: 2026-03-19
 ---
 ## About This CTF
 
-Offsec PG writeups and notes.
+This is where I keep notes for Offsec PG Labs writeups during my revision for Offsec Certificates.
 
-## Ranking
-
-<!-- **My Ranking:** 6th / ? -->

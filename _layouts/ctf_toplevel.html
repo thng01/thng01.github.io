@@ -29,10 +29,12 @@ layout: default
   {% endif %}
 
   <ul style="padding-top: 0.1em;">
+    <!-- Points and tags are only shown for writeups that are not in the "Labs" section. -->
     {% for post in ctf.items %}
     {% unless post.url contains '/index.html' %}
     <li style="line-height: 1; padding-top: 0.4em;">
       <a href="{{ post.url | absolute_url }}"> {{ post.title }}</a>
+      {% unless section.name == "Labs" %}
       <br>
       <small>[{{ post.points }}]</small>
       <span class="tag">
@@ -40,6 +42,7 @@ layout: default
           &lt;{{ post.tags | join: '/&gt; &lt;' }}/&gt;
         </small>
       </span>
+      {% endunless %}
     </li>
     {% endunless %}
     {% endfor %}
