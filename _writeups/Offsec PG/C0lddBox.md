@@ -46,7 +46,7 @@ As an admin I can change the 404.php template in **Appearance>Editor** to a [PHP
 
 ![](../..//\assets\CTFs\Offsec-PG/C0ldd/shell.PNG)
 
-In the search for credentials `c0ldd` as the user.txt flag is in /home/c0ldd, wp-config.php contains a password that worth trying for and it worked. A simple switch to c0ldd allowed us to get user flag.
+
 
 Next is to get the root access. The first thing I would try everytime is to check sudo privilege with `sudo -l`, revealing access to usr/bin/vim as root. All we need to do is go to https://gtfobins.org/, learn how to spawn a shell with vim and read that /root/proof.txt flag.
 
